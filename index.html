@@ -1,23 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <link>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="styleSheet" href="style.css"></link>
-  <title>Weatherology</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="styleSheet" href="style.css"></link>
+<title>365Weather</title>
 </head>
-<body>
-  <div class="container">
-<div class="currentInfo">
-  <div class="dateDisplay">
-    <div class="time" id="time">
-      
-    </div>
 
+<body>
+  <input type="text" id="cityName"></input>
+  <button id="theButton" onclick="theClick()">City Search</button>
+  <div class="container">
+    <div class="currentInfo">
+      <div class="dateAndTimeDisplay">
+        <div class="time" id="time">
+          <h1>12:00</h1>
+        </div>
+        <div id="date display">
+          The Current Date
+        </div>
+        <div id="weatherDisplay">
+          < class="weatherInfoBlock">
+            <p>Humidity</p>
+            <p>100%</p>
+        </div>
+        <div class="weatherInfoBlock">
+          <p>pressure</p>
+          <p>100</p>
+        </div>
+        <div class="weatherInfoBlock">
+          <p>sunrise</p>
+          <p></p>
+        </div>
+        <div class="weatherInfoBlock">
+          <p>sunset</p>
+          <p>100</p>
+        </div>
+      </div>
+      <div class="cityContainer">
+        <div class="timeZoneinfo" id="timeZoneInfo"></div>
+        <div class="country" id="country"></div>
+      </div>
+    </div>
   </div>
-</div>
+
+  <div class="weeklyForcast">
+    <div class="todayTempBlock">
+      <img src="" alt="weatherIcon" class="WeatherImg">
+      <div id=day1>Monday</div>
+      <div class="highTemp">high</div>
+      <div class="lowTemp">Low</div>
+    </div>
+    <div class="todayTempBlock">
+      <img src="" alt="weatherIcon" class="WeatherImg">
+      <div id=day2>tuesday</div>
+      <div class="highTemp">high</div>
+      <div class="lowTemp">Low</div>
+    </div>
+    <div class="todayTempBlock">
+      <img src="" alt="weatherIcon" class="WeatherImg">
+      <div id=day3>wed</div>
+      <div class="highTemp">high</div>
+      <div class="lowTemp">Low</div>
+    </div>
+    <div class="todayTempBlock">
+      <img src="" alt="weatherIcon" class="WeatherImg">
+      <div id=day4>thursd</div>
+      <div class="highTemp">high</div>
+      <div class="lowTemp">Low</div>
+    </div>
+    <div class="todayTempBlock">
+      <img src="" alt="weatherIcon" class="WeatherImg">
+      <div id=day5>friday</div>
+      <div class="highTemp">high</div>
+      <div class="lowTemp">Low</div>
+    </div>
+    <div class="todayTempBlock">
+      <img src="" alt="weatherIcon" class="WeatherImg">
+      <div id=day6>sat</div>
+      <div class="highTemp">high</div>
+      <div class="lowTemp">Low</div>
+    </div>
+    <div class="todayTempBlock">
+      <img src="" alt="weatherIcon" class="WeatherImg">
+      <div id=day7>sun</div>
+      <div class="highTemp">high</div>
+      <div class="lowTemp">Low</div>
+    </div>
+   
   </div>
-  
+  <script src="./assets/script.js"></script>
+
 </body>
+
 </html>
