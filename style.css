@@ -7,3 +7,9 @@ body{
   background-image: url(./assets/images/background1.jpg);
   background-size: cover;
 }
+.weatherInfoBlock {
+  border-radius: 3px;
+  border-color: aqua;
+  border: 2px;
+  border-style: dashed;
+}
