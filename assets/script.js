@@ -113,5 +113,5 @@ let fifthsymb = myWeatherData.list[27].weather.icon
 /// populate data 
 document.getElementById("pressure").textContent = "Pressure: " + pressureValue + " hPa";
 document.getElementById("humidity").textContent = "Humidity: " + humidityValue + "%";
-document.getElementById('').textcontent = 
+document.getElementById('').textcontent = ' ';
 }
