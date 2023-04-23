@@ -34,91 +34,93 @@
           </li>
           <div class="container-fluid" id="searchBar">
             <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success " type="submit">Search</button>
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="cityName">
+              <button class="btn btn-outline-success" onclick="theClick()" type="submit">Search</button>
             </form>
           </div>
         </ul>
       </div>
     </div>
   </nav>
-  <div class="container text-center">
-    <div class="row justify-content-md-center gap-3">
-      <div class="card" style="width: 30rem;">
+  <div class="container" id="displayCont">
+    <div class="container text-center">
+      <div class="row justify-content-md-center gap-3">
+        <div class="card" style="width: 30rem;">
 
 
-        <div class="card-body">
+          <div class="card-body">
 
-          <h5 class="card-title" id="weather discription">Card title</h5>
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item" id="humidity">An item</li>
-              <li class="list-group-item">A second item</li>
-              <li class="list-group-item">A third item</li>
-            </ul>
+            <h5 class="card-title" id="cityTitle"></h5>
+            <img src="" class="card-img-top" id="todImg" alt="...">
+            <div class="card">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item" id="todaysTemp">An item</li>
+                <li class="list-group-item" id="pressure">A second item</li>
+                <li class="list-group-item" id="humidity">A third item</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="wrapper">
-    <div class="container container-bottom">
-      <div class="row justify-content-evenly">
-        <div class="card col-sm-6" style="width: 18rem;">
+    <div class="wrapper">
+      <div class="container container-bottom">
+        <div class="row justify-content-evenly">
+          <div class="card col-sm-6" style="width: 18rem;">
 
-          <div class="card-body">
+            <div class="card-body">
 
-            <h5 class="card-title">Card title</h5>
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card">
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-              </ul>
+              <h5 class="card-title">Card title</h5>
+              <img src="" id="tomImg" class="card-img-top">
+              <div class="card">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item" id="hitom">tom hi</li>
+                  <li class="list-group-item" id="lowtom">tom lo</li>
+                  <li class="list-group-item">A third item</li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="card col-sm-6 col-lg-3" style="width: 18rem;">
-          <div class="card-body">
+          <div class="card col-sm-6 col-lg-3" style="width: 18rem;">
+            <div class="card-body">
 
-            <h5 class="card-title">Card title</h5>
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card">
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-              </ul>
+              <h5 class="card-title">Card title</h5>
+              <img src="" id="turdImg" class="card-img-top">
+              <div class="card">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item" id="turdhi">3rd hi</li>
+                  <li class="list-group-item" id="turdlo">3rd lo</li>
+                  <li class="list-group-item">A third item</li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="card col-sm-6 col-lg-3" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card">
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-              </ul>
+          <div class="card col-sm-6 col-lg-3" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <img src="" id="frthImg" class="card-img-top">
+              <div class="card">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item" id="fourthhi">4th hi</li>
+                  <li class="list-group-item" id="fourthlo">4th low</li>
+                  <li class="list-group-item">A third item</li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="card col-lg-3 col-sm-6" style="width: 18rem;">
+          <div class="card col-lg-3 col-sm-6" style="width: 18rem;">
 
-          <div class="card-body">
+            <div class="card-body">
 
-            <h5 class="card-title">Card title</h5>
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card">
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-              </ul>
+              <h5 class="card-title">Card title</h5>
+              <img src="" id="fifthImg" class="card-img-top">
+              <div class="card">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item" id="fifthi">5thhi</li>
+                  <li class="list-group-item" id="fifthlo">5thlo</li>
+                  <li class="list-group-item">A third item</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
