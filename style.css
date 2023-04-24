@@ -78,6 +78,6 @@ body{
 .container { 
   margin-top: 3rem;
 }
-#displayCont {
-  visibility: 
+#todImg {
+  max-height: 50%,
 }
