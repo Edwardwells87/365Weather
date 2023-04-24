@@ -103,6 +103,8 @@ function callWeatherData() {
 }
 
 function presentWeatherData() {
+  let visElms = document.getElementById('displayCont')
+  visElms.style.visibility = 'visible'
   cityWeatherPulled = JSON.parse(localStorage.getItem('myWeatherData'))
   let todayTemp = cityWeatherPulled.list[0].main.temp;
   temp1.innerHTML = todayTemp + ' °F';
