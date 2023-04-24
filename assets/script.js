@@ -51,7 +51,7 @@ function toStartSearch() {
   event.preventDefault()
   let SearchCity = document.getElementById('cityName')
   let searchCityVal = SearchCity.value
-  console.log(searchCityVal)
+  
   callLatLon(searchCityVal)
   savedName(searchCityVal)
 }
@@ -68,7 +68,7 @@ function callLatLon(whatevrCity) {
     .then(latlondata => {
       localStorage.setItem("latlondata", JSON.stringify(latlondata)); // Update this line
       let showProof = JSON.parse(localStorage.getItem('latlondata'));
-      console.log(showProof);
+      
 
       callWeatherData();
     });
@@ -90,7 +90,7 @@ function callWeatherData() {
   const latitude = calledLatLon[0].lat;
   const longitude = calledLatLon[0].lon;
   const weatherApiKey = '9e237b550d1789a1ff717006257934f9';
-  const weatherUrl = `http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=imperial&appid=${weatherApiKey}`;
+  const weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=imperial&appid=${weatherApiKey}`;
   fetch(weatherUrl)
     .then(response => response.json())
     .then(myWeatherData => {
