@@ -11,6 +11,10 @@ let frthloEl = document.getElementById('fourthlo')
 let fifthhighEl = document.getElementById('fifthi')
 let fifthlowEl = document.getElementById('fifthlo')
 
+let tomHumEl = document.getElementById('tomHum')
+let turdHumEl = document.getElementById('turdHum')
+let fourthHumEl = document.getElementById('fourthHum')
+let fifthHumEl = document.getElementById('fifthHum')
 //img elems
 todImgel = document.getElementById('todImg')
 tomImgel = document.getElementById('tomImg')
@@ -37,6 +41,7 @@ tomDateEl.innerText = tomorrowdate.format('MMM D')
 turdDateEL.innerText = turdDate.format('MMM D')
 fourthDateEl.innerText = fourthDate.format('MMM D')
 fifthDateEl.innerText = fifthDate.format('MMM D')
+
 
 const options = {
   method: 'GET',
@@ -80,7 +85,7 @@ function savedName(WhicheverCity) {
     localStorage.setItem('savedCities', '[]')
   }
   let oldSavedCities = JSON.parse(localStorage.getItem('savedCities'))
-  oldSavedCities.push(capitalCityName)
+  oldSavedCities.unshift(capitalCityName)
   localStorage.setItem('savedCities', JSON.stringify(oldSavedCities))
   callLatLon(cityname)
 }
@@ -96,9 +101,9 @@ function callWeatherData() {
     .then(myWeatherData => {
       localStorage.setItem("myWeatherData", JSON.stringify(myWeatherData)); // Update this line
 
-      console.log(myWeatherData)
+      
       presentWeatherData()
-      makeDropDown()
+      
     })
 }
 
@@ -109,45 +114,52 @@ function presentWeatherData() {
   let todayTemp = cityWeatherPulled.list[0].main.temp;
   temp1.innerHTML = todayTemp + ' °F';
   let todaySymbl = cityWeatherPulled.list[0].weather[0].icon;
-  console.log(todaySymbl)
+  
   todImg.src = `https://openweathermap.org/img/wn/${todaySymbl}@2x.png`
   let todaysHumid = cityWeatherPulled.list[0].main.humidity;
   todhumel.innerText = 'Humidity  ' + todaysHumid;
-  let todaysPres = cityWeatherPulled.list[0].main.pressure;
-  todpressel.innerText = 'Pressure  ' + todaysPres;
+  let todaySpeed = cityWeatherPulled.list[0].wind.speed;
+  todpressel.innerText = 'Wind Speed  ' + todaySpeed;
 
-  let tomLow = cityWeatherPulled.list[3].main.temp_min;
-  templowtom.innerText = 'Low ' + tomLow + ' °F'
-  let tomHi = cityWeatherPulled.list[3].main.temp_max;
-  tomHiEl.innerText = 'High ' + tomHi + ' °F'
+  let tomtemp = cityWeatherPulled.list[3].main.temp;
+  templowtom.innerText = tomtemp + ' °F';
+  let tomWind = cityWeatherPulled.list[3].wind.speed;
+  tomHiEl.innerText = 'Wind Speed  ' + tomWind;
   let tomSym = cityWeatherPulled.list[3].weather[0].icon;
   tomImgel.src = `https://openweathermap.org/img/wn/${tomSym}@2x.png`
+let tomHum = cityWeatherPulled.list[3].main.humidity
+tomHumEl.innerText = 'Humidity  ' + tomHum
 
-  let thirdLow = cityWeatherPulled.list[11].main.temp_min;
-  thirdLowEl.innerText = 'Low ' + tomLow + ' °F'
-  let thirdHi = cityWeatherPulled.list[11].main.temp_max
-  thirdHiEl.innerText = 'High ' + thirdHi + ' °F'
-  let thirdSymbl = cityWeatherPulled.list[11].weather[0].icon
-  turdImgel.src = `https://openweathermap.org/img/wn/${thirdSymbl}@2x.png`
+  let thirdLow = cityWeatherPulled.list[11].main.temp;
+  thirdLowEl.innerText = thirdLow + ' °F';
+  let thirdWind = cityWeatherPulled.list[11].wind.speed;
+  thirdHiEl.innerText = 'Wind Speed  ' + thirdWind; 
+  let thirdSymbl = cityWeatherPulled.list[11].weather[0].icon;
+  turdImgel.src = `https://openweathermap.org/img/wn/${thirdSymbl}@2x.png`;
+  let turdHum = cityWeatherPulled.list[3].main.humidity
+  turdHumEl.innerText = 'Humidity  ' + turdHum
 
-
-  let frthlw = cityWeatherPulled.list[19].main.temp_min
-  frthloEl.innerText = 'Low ' + frthlw + ' °F'
-  let frthhi = cityWeatherPulled.list[19].main.temp_max
-  frthhiEl.innerText = 'High ' + frthhi + ' °F'
-  let frthsym = cityWeatherPulled.list[19].weather[0].icon
+  let frthlw = cityWeatherPulled.list[19].main.temp;
+  frthloEl.innerText = frthlw + ' °F';
+  let frthWind = cityWeatherPulled.list[19].wind.speed;
+  frthhiEl.innerText = 'Wind Speed  ' + frthWind;
+  let frthsym = cityWeatherPulled.list[19].weather[0].icon;
   frthImgEl.src = `https://openweathermap.org/img/wn/${frthsym}@2x.png`
+  let fourthHum = cityWeatherPulled.list[3].main.humidity
+  fourthHumEl.innerText = 'Humidity  ' + fourthHum
 
-
-  let fifthlow = cityWeatherPulled.list[27].main.temp_min
-  fifthlowEl.innerText = 'Low ' + fifthlow + ' °F'
-  let fifthhigh = cityWeatherPulled.list[27].main.temp_max
-  fifthhighEl.innerText = 'High ' + fifthhigh + ' °F'
-  let fifthsymb = cityWeatherPulled.list[27].weather[0].icon
-  fifthImgEl.src = `https://openweathermap.org/img/wn/${fifthsymb}@2x.png`
+  let fifthTemp = cityWeatherPulled.list[27].main.temp;
+  fifthlowEl.innerText = fifthTemp + ' °F';
+  let fifthWind = cityWeatherPulled.list[27].wind.speed;
+  fifthhighEl.innerText = 'Wind Speed  ' + fifthWind;
+  let fifthsymb = cityWeatherPulled.list[27].weather[0].icon;
+  fifthImgEl.src = `https://openweathermap.org/img/wn/${fifthsymb}@2x.png`;
+  let fifthHum = cityWeatherPulled.list[3].main.humidity
+  fifthHumEl.innerText = 'Humidity  ' + fifthHum
 
 }
 function makeDropDown() {
+
   let cityNameHist = JSON.parse(localStorage.getItem('savedCities'))
   console.log(cityNameHist)
   //save the name of the city  in an array then list array into the dropdown 
@@ -204,5 +216,13 @@ function makeDropDown() {
   })
   listElm = document.getElementById('listPop')
   listElm.appendChild(fifthCityElm)
+ 
+ setTimeout(function(){
+  let timedArr = [firstCityElm, secondCityElm, thirdCityElm, fourthCityElm, fifthCityElm];
+  deleteElm = document.getElementById('dropDown')
+  for (var i = 0; i < timedArr.length; i++)
+  //deleteElm.removeChild(timedArr[i])  -- didnt work this way.. 
+ timedArr[i].parentNode.removeChild(timedArr[i]); //i needed help with how to properly word this function
+ }, 5000)
 }
 

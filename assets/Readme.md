@@ -40,6 +40,8 @@ This is a weather application that displays the current weather and 5-day foreca
 - OpenWeatherMap API: https://openweathermap.org/
 - RapidAPI: https://rapidapi.com/
 - Icons: https://openweathermap.org/weather-conditions
+- Vector background is from Starline @ freepik: 
+    https://www.freepik.com/author/starline
 
 
 ## Links
